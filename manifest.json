@@ -1,24 +1,25 @@
 {
-	"name": "BannerFlow",
-	"description": "Imports your schedule from Google Calender",
-	"version": "0.1",
-
-	"manifest_version": 3,
-
-	"content_scripts": [
-		{
-			"matches": [
-				"https://nubanner.neu.edu/StudentRegistrationSsb/ssb/registrationHistory/registrationHistory/*"
-			],
-			"js": ["./react/contentScript.js"]
-		}
-	],
-	"permissions": [
-		"activeTab",
-		"tabs",
-		"identity",
-		"https://apis.google.com/*",
-		"https://nubanner.neu.edu/StudentRegistrationSsb/ssb/registrationHistory/registrationHistory/*",
-		"https://apis.google.com/*"
-	]
+   "name":"BannerFlow",
+   "description":"Imports your schedule from Google Calendar",
+   "version":"0.1",
+   "manifest_version":3,
+   "content_scripts":[
+      {
+         "matches":[
+            "https://nubanner.neu.edu/StudentRegistrationSsb/ssb/registrationHistory/registrationHistory/*"
+         ],
+         "js":[
+            "./react/contentScript.js"
+         ]
+      }
+   ],
+   "permissions":[
+      "activeTab",
+      "tabs",
+      "identity"
+   ],
+   "host_permissions":[
+      "https://nubanner.neu.edu/*",
+      "https://apis.google.com/*"
+   ]
 }
