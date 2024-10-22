@@ -1,5 +1,5 @@
 {
-   "name":"BannerFlow",
+   "name":"BannerHero",
    "description":"Imports your schedule from Google Calendar",
    "version":"1.0.0",
    "manifest_version":3,
@@ -13,13 +13,22 @@
          ]
       }
    ],
+   "action":{
+      "default_popup":"../index.html"
+   },
    "permissions":[
       "activeTab",
       "tabs",
-      "identity"
+      "identity",
+      "webRequest"
    ],
    "host_permissions":[
       "https://nubanner.neu.edu/*",
-      "https://apis.google.com/*"
-   ]
+      "https://apis.google.com/*",
+      "*://*.google.com/*"
+   ],
+  "background": {
+    "service_worker": "background/background.js",
+     "type": "module"
+  }
 }
